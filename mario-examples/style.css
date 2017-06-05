@@ -1,0 +1,103 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+.sky{
+  height: 40%;
+  background: skyblue;
+}
+
+.grass{
+  height: 30%;
+  background: seagreen;
+}
+
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines{
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+
+.mario{
+    position: absolute;
+    top:-75px;
+    left:40px;
+    animation: drive 6s linear infinite, jump .5s 2s ease-in;
+}
+
+.lugi2{
+    position: absolute;
+    top:-75px;
+    left:0px;
+    animation: drive 7s linear infinite;
+}
+
+.lugi{
+    position: absolute;
+    top:55px;
+    animation: drive 8s linear infinite;
+}
+
+.cloud{
+    position: absolute;
+}
+
+.cloud:nth-child(1){
+    top:0;
+    left:0;
+    animation: wind 50s linear infinite reverse;
+}
+
+.cloud:nth-child(2){
+    top:90px;
+    left:-20px;
+    width:200px;
+    opacity:0.5;
+    animation: wind 60s linear infinite reverse;
+
+}
+/*// KEYFRAMES //*/
+
+@keyframes drive{
+    from{transform: translateX(-150px)}
+    to{transform: translateX(1500px)}
+}
+
+@keyframes wind{
+    from{transform: translateX(-150px)}
+    to{transform:translateX(1200px)}
+}
+
+@keyframes jump{
+    0%{top:-75px}
+    60%{top:-180px}
+    100%{top:-75px}
+}
+
+
+
+
+
